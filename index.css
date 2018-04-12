@@ -1,0 +1,199 @@
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+
+.container {
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  background-image: url("./assets/blackFade.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box;
+}
+/* Hidden classes */
+.title_hide,
+.date_hide,
+.cta_hide {
+  visibility: hidden;
+}
+
+/* Static classes */
+.intro_bg {
+  opacity: 0;
+}
+
+.text {
+  width: 600px;
+  opacity: 0;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -60px;
+}
+
+.title {
+  z-index: 6;
+  opacity: 1;
+  top: 90px;
+  width: 550px;
+  margin-left: -275px;
+  position: absolute;
+  text-align: center;
+}
+
+.spaceship{
+  z-index: 2;
+  position: absolute;
+  width: 600px;
+  margin-left: -150px;
+  margin-top: -157.5px;
+}
+
+.beam {
+  z-index: 3;
+  opacity: 0;
+  position: absolute;
+  top: -110px;
+  transform: translate(0px, 110px);
+  transition: transform 3.5s linear;
+  transition-delay: 2.5s;
+}
+
+.earth {
+  z-index: 2;
+  width: 600px;
+  position: absolute;
+  margin-left: -150px;
+  margin-top: 88.5px;
+  z-index:5;
+}
+
+.date {
+  z-index: 6;
+  top: 180px;
+  position: absolute;
+}
+.cta {
+  position: absolute;
+  z-index: 100;
+  left: 25px;
+}
+
+/* Animated Classes */
+.intro_bg_animated {
+  animation: fadeRedBg 7s ease-in;
+}
+
+.intro_text_1_animated {
+  transform: scale(0);
+  transition: transform 2s ease-in;
+  animation: textFadeIn 1s ease-in;
+  animation: textFadeOut 2s ease-in;
+}
+
+.intro_text_2_animated {
+  transform: scale(0);
+  transition: transform 2s ease-in;
+  animation: textFadeIn 1s ease-in;
+  animation: textFadeOut 2s ease-in;
+}
+
+.intro_text_3_animated {
+  transform: scale(0);
+  transition: transform 2s ease-in;
+  animation-delay: 0.5s;
+  animation: textFadeIn 1s ease-in;
+  animation: textFadeOut 2s ease-in;
+}
+
+.title_animated {
+  animation: textFadeIn 2s ease-out;
+  transform: scale(.5);
+  transition: transform 3s ease-out;
+}
+
+.spaceship_animated {
+  transform: translate(0px, 110px) scale(0.5);
+  transition: transform 5s ease-in;
+}
+
+.earth_animated {
+  transform: translate(0px, -354px) scale(0.5);
+  transition: transform 5s ease-in;
+}
+
+.date_animated {
+  animation: textFadeIn 2s ease-out;
+}
+
+.cta_animated {
+  transform: translate(0px, -40px);
+  transition: transform 2s ease-out;
+}
+/* Animations on hover */
+.lightwash{
+  position: absolute;
+  z-index: 7;
+  left: -400px;
+  bottom: -67px;
+}
+
+.beam_flash {
+  animation: beamFlash 1s linear;
+}
+
+.lightwash_flash {
+  animation: flash 1s linear;
+}
+
+@keyframes flash {
+  100% {
+    left: 400px;
+  }
+}
+
+@keyframes beamFlash {
+  50% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeRedBg {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes textFadeOut {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
